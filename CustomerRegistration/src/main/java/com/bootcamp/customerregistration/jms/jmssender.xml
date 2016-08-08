@@ -20,6 +20,8 @@
 <constructor-arg name="connectionFactory" ref="connectionFactory"></constructor-arg>  
 <property name="defaultDestinationName" value="ServiceplansQ"></property>  
 </bean>  
+
+
   
 <context:component-scan base-package="com.bootcamp.customerregistration.jms"></context:component-scan>  
   

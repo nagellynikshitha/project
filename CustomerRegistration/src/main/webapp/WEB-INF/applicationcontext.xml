@@ -18,6 +18,7 @@
 	<bean id="serplan" class="com.bootcamp.customerregistration.service.SoapClient" />
 	
 	<bean id="testjms" class="com.bootcamp.customerregistration.jms.TestJmsSender" />
+	<bean id="msgSender" class = "com.bootcamp.customerregistration.jms.MyMessageSender"/>
 	
 	<bean id= "restclient" class="com.bootcamp.customerregistration.service.RestClient"/>
 	
