@@ -20,7 +20,7 @@
     <servlet-name>appServlet</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-  <servlet>
+<!--   <servlet>
     <servlet-name>jersey-serlvet</servlet-name>
     <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
     <init-param>
@@ -40,7 +40,7 @@
   <servlet-mapping>
     <servlet-name>AppCXFServlet</servlet-name>
     <url-pattern>/services/*</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping> -->
   <welcome-file-list>
     <welcome-file>signup.jsp</welcome-file>
   </welcome-file-list>
