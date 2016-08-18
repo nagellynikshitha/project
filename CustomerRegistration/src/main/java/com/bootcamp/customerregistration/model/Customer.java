@@ -11,6 +11,10 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * @author Nikshitha Nagelly 
+ * This class has all required details of customer
+ */
 @Entity
 @Table(name = "customer")
 @XmlRootElement
@@ -24,11 +28,9 @@ public class Customer {
 	private String lastName;
 	private String email;
 
-	
 	@OneToOne
 	@PrimaryKeyJoinColumn
 	private Service_Plan servplan;
-	
 
 	public Service_Plan getServplan() {
 		return servplan;
@@ -87,6 +89,5 @@ public class Customer {
 		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", servplan=" + servplan + "]";
 	}
-
 
 }

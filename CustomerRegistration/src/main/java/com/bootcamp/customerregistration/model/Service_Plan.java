@@ -15,41 +15,47 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import org.hibernate.annotations.Cascade;
 
+/**
+ * @author Nikshitha Nagelly 
+ * This class has all details associated with service
+ * plans
+ */
 @Entity
 @Table(name = "service_plan")
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Service_Plan  {
-	
+public class Service_Plan {
+
 	@Id
 	@Column(name = "sid")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int sid;	
+	private int sid;
 	private String servicePlan;
-	
-	
-	@OneToOne(mappedBy="servplan")
-	@Cascade(value=org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+
+	@OneToOne(mappedBy = "servplan")
+	@Cascade(value = org.hibernate.annotations.CascadeType.SAVE_UPDATE)
 	private Customer customer;
-	
+
 	public int getSid() {
 		return sid;
 	}
+
 	public void setSid(int sid) {
 		this.sid = sid;
 	}
+
 	@Column(name = "serviceplan")
 	public String getServicePlan() {
 		return servicePlan;
 	}
+
 	public void setServicePlan(String servicePlan) {
 		this.servicePlan = servicePlan;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Service [sid=" + sid + ", servicePlan=" + servicePlan + "]";
 	}
-	
 
 }

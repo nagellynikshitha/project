@@ -39,17 +39,15 @@ public class CustomerController {
 	{
 
 		logger.info("serid" + customer.getServplan().getSid());
-
 		regService.addCustomer(customer); // inserting customer
 
 		int sid = customer.getServplan().getSid();
 		int cid = customer.getId();
 		String msg = sid + ":" + cid;
 
-		msgSender.sendMessage(msg);//JMS CALL
-
-		Customer cust = restclient.getCustomerById(customer.getId());//REST CALL
-		
+		msgSender.sendMessage(msg);// JMS CALL
+		Customer cust = restclient.getCustomerById(customer.getId());// REST
+																		// CALL
 		ModelAndView mv = new ModelAndView("custsuccess", "cust", cust);
 
 		return mv;

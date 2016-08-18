@@ -1,7 +1,5 @@
 package com.bootcamp.customerregistration.service;
 
-/*import javax.jws.WebService;*/
-
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,26 +9,28 @@ import com.bootcamp.customerregistration.dao.CustomerDao;
 import com.bootcamp.customerregistration.dao.CustomerDaoImpl;
 import com.bootcamp.customerregistration.model.Customer;
 
+/**
+ * @author Nikshitha Nagelly 
+ * This class adds and gets customer details from
+ * database
+ */
 @Service
-/*@WebService(endpointInterface = "com.bootcamp.customerregistration.service.CustomerService", serviceName = "custService")*/
-public class CustomerserviceImpl implements CustomerService{
+public class CustomerserviceImpl implements CustomerService {
+
 	@Autowired
 	private CustomerDao storeDao;
 
 	@Override
-	
-@Transactional
+	@Transactional
 	public String addCustomer(Customer cust) {
-		
+
 		return this.storeDao.addCustomer(cust);
 	}
-	
+
 	@Transactional
-	public int getCustomerid(Customer cust)
-	{
-	return this.storeDao.getCustomerid(cust);
-	
+	public int getCustomerid(Customer cust) {
+		return this.storeDao.getCustomerid(cust);
+
 	}
-	
-	
+
 }

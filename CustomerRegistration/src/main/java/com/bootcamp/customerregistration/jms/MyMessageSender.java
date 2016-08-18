@@ -1,27 +1,30 @@
 package com.bootcamp.customerregistration.jms;
 
 import javax.jms.*;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author Nikshitha Nagelly 
+ * This class sends messages to queue
+ */
 @Component("messageSender")
 public class MyMessageSender {
-	
-@Autowired
-private JmsTemplate jmsTemplate;
 
-public void sendMessage(final String message){
-	jmsTemplate.send(new MessageCreator(){
+	@Autowired
+	private JmsTemplate jmsTemplate;
 
-		@Override
-		public Message createMessage(Session session) throws JMSException {
-			return session.createTextMessage(message);
-		}
-		
-	});
-	
-}
+	public void sendMessage(final String message) {
+		jmsTemplate.send(new MessageCreator() {
+
+			@Override
+			public Message createMessage(Session session) throws JMSException {
+				return session.createTextMessage(message);
+			}
+
+		});
+
+	}
 }
